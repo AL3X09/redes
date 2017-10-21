@@ -29,15 +29,16 @@ var cadenaAnalizar = 'Al ex C'; //
           letras.push(caracter.charCodeAt());
     }
     //console.log(letras);
-
+    //en esta linea recivo el valor del campo version,combierto a binario y se lo envio
+    //a la funcion llenar checksum
     $('#version').change(function() {
         var val1=$('#version').val();
-        var res=ConvertBase(val1).from(10).to(2);
+        var resbinario=ConvertBase(val1).from(10).to(2); //esta es una variable global que tranforma a binario
         //res = parseInt(res, 10);
-        var res2 = res.split("");
+        var res = resbinario.split("");
         //alert( res2 );    
         //var names =res2;
-        llenarchecksum(res2);
+        llenarchecksum(res);
         
       });
 
