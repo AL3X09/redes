@@ -53,14 +53,14 @@ function viewcodificarIP() {
 }
 
 function llenarchecksum(valor){
-    console.log(valor);
+    //debugger;
     valor.forEach(function(element) {
         
         if (element==="1") {
-            console.log(element);
-            checksum+=element;
+            checksum++;
         }
     });
+//aqui coloca el val para que automaticamente lleve el valor al input
     console.log(checksum);
 } 
 
