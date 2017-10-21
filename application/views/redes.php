@@ -68,7 +68,7 @@ ob_end_flush();
                 <h5 class="white-text">ALEXANDER CIFUENTES SÁNCHEZ</h5>
             </div>
             <div class="col l6 s12">
-                <h5 class="white-text">LORENA ARIZTIZABAL ANGEL</h5>
+                <h5 class="white-text">LORENA ARISTIZABAL ANGEL</h5>
                 <ul>
                     <li><a class="white-text" href="#!"></a></li>
                 </ul>
