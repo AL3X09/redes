@@ -41,6 +41,28 @@ var cadenaAnalizar = 'Al ex C'; //
         llenarchecksum(res);
         
       });
+	//cabecera
+     $('#cabecera').change(function() {
+        var val1=$('#cabecera').val();
+        var resbinario=ConvertBase(val1).from(10).to(2); //esta es una variable global que tranforma a binario
+        //res = parseInt(res, 10);
+        var res = resbinario.split("");
+        //alert( res2 );    
+        //var names =res2;
+        llenarchecksum(res);
+        
+      });
+	  //tipoServicio
+      $('#tipoServicio').change(function() {
+        var val1=$('#tipoServicio').val();
+        var resbinario=ConvertBase(val1).from(10).to(2); //esta es una variable global que tranforma a binario
+        //res = parseInt(res, 10);
+        var res = resbinario.split("");
+        //alert( res2 );    
+        //var names =res2;
+        llenarchecksum(res);
+        
+      });
 
 })
 
