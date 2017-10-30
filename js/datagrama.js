@@ -33,13 +33,18 @@ var cadenaAnalizar = 'Al ex C'; //
     //a la funcion llenar checksum
     $('#version').change(function() {
         var val1=$('#version').val();
-        var resbinario=ConvertBase(val1).from(10).to(2); //esta es una variable global que tranforma a binario
-        //res = parseInt(res, 10);
-        var res = resbinario.split("");
-        //alert( res2 );    
-        //var names =res2;
-        llenarchecksum(res);
-        
+       		if (val1 < 0 || val1 > 15) {
+			alert( 'La versión debe  debe estar entre 0 y 15');
+            $('#version').val('');
+		}else	
+        {    
+         var resbinario=ConvertBase(val1).from(10).to(2); //esta es una variable global que tranforma a binario
+         //res = parseInt(res, 10);
+         var res = resbinario.split("");
+         //alert( res2 );    
+         //var names =res2;
+         llenarchecksum(res);
+        }
       });
     //cabecera
      $('#cabecera').change(function() {
@@ -55,13 +60,18 @@ var cadenaAnalizar = 'Al ex C'; //
      //tipoServicio
       $('#tipoServicio').change(function() {
         var val3=$('#tipoServicio').val();
+         if (val3 < 0 || val3 > 7) {
+            alert('El tipo de servicio debe estar entre 0 y 7')
+            $('#tipoServicio').val('');
+        } else
+        {
         var resbinario=ConvertBase(val3).from(10).to(2); //esta es una variable global que tranforma a binario
         //res = parseInt(res, 10);
         var res = resbinario.split("");
         //alert( res2 );    
         //var names =res2;
         llenarchecksum(res);
-        
+        }
       });
       //longitudT
        $('#longitudT').change(function() {
@@ -88,13 +98,18 @@ var cadenaAnalizar = 'Al ex C'; //
       //flag
       $('#flag').change(function() {
         var val6=$('#flag').val();
+          if (val6 < 0 || val6 > 1){
+            alert('Flag deber ser 0 o 1');
+            $('#flag').val('');
+        }else
+        {
         var resbinario=ConvertBase(val6).from(10).to(2); //esta es una variable global que tranforma a binario
         //res = parseInt(res, 10);
         var res = resbinario.split("");
         //alert( res2 );    
         //var names =res2;
         llenarchecksum(res);
-        
+		}     
       });
       //offset
       $('#offset').change(function() {
@@ -110,13 +125,18 @@ var cadenaAnalizar = 'Al ex C'; //
       //ttl
       $('#ttl').change(function() {
         var val8=$('#ttl').val();
-        var resbinario=ConvertBase(val8).from(10).to(2); //esta es una variable global que tranforma a binario
-        //res = parseInt(res, 10);
-        var res = resbinario.split("");
-        //alert( res2 );    
-        //var names =res2;
-        llenarchecksum(res);
-        
+    	if (val8 < 0 || val8 > 255){
+            alert('El ttl debe estar entre 0 y 255');
+            $('#ttl').val('');
+        } else
+        {
+        	var resbinario=ConvertBase(val8).from(10).to(2); //esta es una variable global que tranforma a binario
+        	//res = parseInt(res, 10);
+        	var res = resbinario.split("");
+        	//alert( res2 );    
+        	//var names =res2;
+        	llenarchecksum(res);
+        }
       });
        //protocolo
       $('#protocolo').change(function() {
