@@ -49,25 +49,17 @@ var cadenaAnalizar = 'Al ex C'; //
     //cabecera
      $('#cabecera').change(function() {
         var val2=$('#cabecera').val();
-<<<<<<< HEAD
 		if (val2 < 0 || val2 > 15) {
 			alert( 'La versión debe  debe estar entre 0 y 15');
-            $('#cabecera
-			').val('');
+            $('#cabecera').val('');
 		}else	{
-=======
->>>>>>> origin/master
         var resbinario=ConvertBase(val2).from(10).to(2); //esta es una variable global que tranforma a binario
         //res = parseInt(res, 10);
         var res = resbinario.split("");
         //alert( res2 );    
         //var names =res2;
         llenarchecksum(res);
-<<<<<<< HEAD
         }
-=======
-        
->>>>>>> origin/master
       });
      //tipoServicio
       $('#tipoServicio').change(function() {
@@ -78,8 +70,6 @@ var cadenaAnalizar = 'Al ex C'; //
         } else
         {
         var resbinario=ConvertBase(val3).from(10).to(2); //esta es una variable global que tranforma a binario
-<<<<<<< HEAD
-=======
         //res = parseInt(res, 10);
         var res = resbinario.split("");
         //alert( res2 );    
@@ -102,14 +92,11 @@ var cadenaAnalizar = 'Al ex C'; //
        $('#identificacion').change(function() {
         var val5=$('#identificacion').val();
         var resbinario=ConvertBase(val5).from(10).to(2); //esta es una variable global que tranforma a binario
->>>>>>> origin/master
         //res = parseInt(res, 10);
         var res = resbinario.split("");
         //alert( res2 );    
         //var names =res2;
         llenarchecksum(res);
-<<<<<<< HEAD
-        }
       });
       //longitudT
        $('#longitudT').change(function() {
@@ -185,8 +172,6 @@ var cadenaAnalizar = 'Al ex C'; //
         //alert( res2 );    
         //var names =res2;
         llenarchecksum(res);
-=======
->>>>>>> origin/master
         
       });
       //flag
