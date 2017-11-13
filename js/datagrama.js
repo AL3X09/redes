@@ -1,21 +1,21 @@
 /**
- * Created by Alex on 11/03/2017.
+ * Created by Alex y Lorena on 19/10/2017.
  */
 var getUrl = window.location;
 var baseUrl = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1]+ "/"; // lineas servidor local
 var img=baseUrl+'img/x.png';
 var re = /\s*,\s*/;
 var checksum=0;
-
+var letrass=[];
 $(document).ready(function() {
     var num = 10;
     var res = String.fromCharCode(65);
     var letras=[];
-
+ $('select').material_select();
 if (typeof(codificado) === "undefined") {
     console.log("codificado no está definido.");
 }else{
-    codificar();
+    //codificar();// jlaristizabal
     enviarDatos();
 }
 //alert( num.toString(2) ); // "1111101"
@@ -29,17 +29,132 @@ var cadenaAnalizar = 'Al ex C'; //
           letras.push(caracter.charCodeAt());
     }
     //console.log(letras);
-
+    //en esta linea recivo el valor del campo version,combierto a binario y se lo envio
+    //a la funcion llenar checksum
     $('#version').change(function() {
         var val1=$('#version').val();
-        var res=ConvertBase(val1).from(10).to(2);
+       		if (val1 < 0 || val1 > 15) {
+			alert( 'La versión debe  debe estar entre 0 y 15');
+            $('#version').val('');
+		}else	
+        {    
+         var resbinario=ConvertBase(val1).from(10).to(2); //esta es una variable global que tranforma a binario
+         //res = parseInt(res, 10);
+         var res = resbinario.split("");
+         //alert( res2 );    
+         //var names =res2;
+         llenarchecksum(res);
+        }
+      });
+    //cabecera
+     $('#cabecera').change(function() {
+        var val2=$('#cabecera').val();
+		if (val2 < 0 || val2 > 15) {
+			alert( 'La versión debe  debe estar entre 0 y 15');
+            $('#cabecera
+			').val('');
+		}else	{
+        var resbinario=ConvertBase(val2).from(10).to(2); //esta es una variable global que tranforma a binario
         //res = parseInt(res, 10);
-        var res2 = res.split("");
+        var res = resbinario.split("");
         //alert( res2 );    
         //var names =res2;
-        llenarchecksum(res2);
+        llenarchecksum(res);
+        }
+      });
+     //tipoServicio
+      $('#tipoServicio').change(function() {
+        var val3=$('#tipoServicio').val();
+         if (val3 < 0 || val3 > 7) {
+            alert('El tipo de servicio debe estar entre 0 y 7')
+            $('#tipoServicio').val('');
+        } else
+        {
+        var resbinario=ConvertBase(val3).from(10).to(2); //esta es una variable global que tranforma a binario
+        //res = parseInt(res, 10);
+        var res = resbinario.split("");
+        //alert( res2 );    
+        //var names =res2;
+        llenarchecksum(res);
+        }
+      });
+      //longitudT
+       $('#longitudT').change(function() {
+        var val4=$('#longitudT').val();
+        var resbinario=ConvertBase(val4).from(10).to(2); //esta es una variable global que tranforma a binario
+        //res = parseInt(res, 10);
+        var res = resbinario.split("");
+        //alert( res2 );    
+        //var names =res2;
+        llenarchecksum(res);
+        //
+      });
+       //identificacion
+       $('#identificacion').change(function() {
+        var val5=$('#identificacion').val();
+        var resbinario=ConvertBase(val5).from(10).to(2); //esta es una variable global que tranforma a binario
+        //res = parseInt(res, 10);
+        var res = resbinario.split("");
+        //alert( res2 );    
+        //var names =res2;
+        llenarchecksum(res);
         
       });
+      //flag
+      $('#flag').change(function() {
+        var val6=$('#flag').val();
+          if (val6 < 0 || val6 > 1){
+            alert('Flag deber ser 0 o 1');
+            $('#flag').val('');
+        }else
+        {
+        var resbinario=ConvertBase(val6).from(10).to(2); //esta es una variable global que tranforma a binario
+        //res = parseInt(res, 10);
+        var res = resbinario.split("");
+        //alert( res2 );    
+        //var names =res2;
+        llenarchecksum(res);
+		}     
+      });
+      //offset
+      $('#offset').change(function() {
+        var val7=$('#offset').val();
+        var resbinario=ConvertBase(val7).from(10).to(2); //esta es una variable global que tranforma a binario
+        //res = parseInt(res, 10);
+        var res = resbinario.split("");
+        //alert( res2 );    
+        //var names =res2;
+        llenarchecksum(res);
+        
+      });
+      //ttl
+      $('#ttl').change(function() {
+        var val8=$('#ttl').val();
+    	if (val8 < 0 || val8 > 255){
+            alert('El ttl debe estar entre 0 y 255');
+            $('#ttl').val('');
+        } else
+        {
+        	var resbinario=ConvertBase(val8).from(10).to(2); //esta es una variable global que tranforma a binario
+        	//res = parseInt(res, 10);
+        	var res = resbinario.split("");
+        	//alert( res2 );    
+        	//var names =res2;
+        	llenarchecksum(res);
+        }
+      });
+       //protocolo
+      $('#protocolo').change(function() {
+        var val9=$('#protocolo').val();
+        var resbinario=ConvertBase(val9).from(10).to(2); //esta es una variable global que tranforma a binario
+        //res = parseInt(res, 10);
+        var res = resbinario.split("");
+        //alert( res2 );    
+        //var names =res2;
+        llenarchecksum(res);
+        
+      });
+
 
 })
 
@@ -53,15 +168,16 @@ function viewcodificarIP() {
 }
 
 function llenarchecksum(valor){
-    console.log(valor);
+    //debugger;
     valor.forEach(function(element) {
         
         if (element==="1") {
-            console.log(element);
-            checksum+=element;
+            checksum++;
         }
     });
-    console.log(checksum);
+//aqui coloca el val para que automaticamente lleve el valor al input
+    //console.log(checksum);
+   var val10=$('#checksum').val(checksum);
 } 
 
 function enviar() {
@@ -87,7 +203,7 @@ function volver1() {
 function enviarDatos() {
     var dato1 = $("#ip").val();
     var dato2 = $("#msj1").val();
-    var dato3 = $("#ip2").val();
+    var dato3 = $("#ip2").val();	
     $("#codificado2").append('<div class="row">'+
     '<div class="col s12 m6 l3">'+
     '<div class="card-panel teal lighten-1">'+ dato1 +'</div>'+
@@ -114,4 +230,20 @@ var ConvertBase = function (num) {
         }
     };
 };
+
+function codificar2() {
+   
+    var datores = $("#msj").val();
+
+    for (var i = 0; i< datores.length; i++) {
+            var caracter = datores.charAt(i);
+            //caracter.charCodeAt(i)
+             //console.log(caracter.charCodeAt());
+             letrass.push(caracter.charCodeAt());
+       }
+       console.log(letrass);
+       $("#msj2").val(letrass);
+      
+   
+}
 

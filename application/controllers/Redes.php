@@ -88,8 +88,8 @@ class Redes extends CI_Controller {
         $protocoloarray = explode('.', $_POST['protocolo']);
         $checksumarray = explode('.', $_POST['checksum']);
         $arrayip1 = explode('.', $_POST['ip1']);
-        $arraymsj = explode('.', $_POST['ip2']);
-        $arrayip2 = explode(',', $_POST['msj2']);
+        $arraymsj = explode(',', $_POST['msj2']);
+        $arrayip2 = explode('.', $_POST['ip2']);
         $versionres = array();
         $cabecerares = array();
         $tipoServiciores = array();
@@ -106,14 +106,14 @@ class Redes extends CI_Controller {
 
         foreach ($versionarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
-            $datos['dato'.$k] = str_pad($deco, 8, "0", STR_PAD_LEFT);//no funcional
-            array_push($versionres, str_pad($deco, 8, "0", STR_PAD_LEFT));
+            $datos['dato'.$k] = str_pad($deco, 4, "0", STR_PAD_LEFT);//no funcional
+            array_push($versionres, str_pad($deco, 4, "0", STR_PAD_LEFT));
         }
 
         foreach ($cabeceraarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
-            $datos['dato'.$k] = str_pad($deco, 8, "0", STR_PAD_LEFT);//no funcional
-            array_push($cabecerares, str_pad($deco, 8, "0", STR_PAD_LEFT));
+            $datos['dato'.$k] = str_pad($deco, 4, "0", STR_PAD_LEFT);//no funcional
+            array_push($cabecerares, str_pad($deco, 4, "0", STR_PAD_LEFT));
         }
 
         foreach ($tipoServicioarray as $k => $value) {
@@ -124,24 +124,24 @@ class Redes extends CI_Controller {
 
         foreach ($longitudTarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
-            $datos['dato'.$k] = str_pad($deco, 8, "0", STR_PAD_LEFT);//no funcional
-            array_push($longitudTres, str_pad($deco, 8, "0", STR_PAD_LEFT));
+            $datos['dato'.$k] = str_pad($deco, 16, "0", STR_PAD_LEFT);//no funcional
+            array_push($longitudTres, str_pad($deco, 16, "0", STR_PAD_LEFT));
         }
 
         foreach ($identificacionarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
-            $datos['dato'.$k] = str_pad($deco, 8, "0", STR_PAD_LEFT);//no funcional
-            array_push($identificacionres, str_pad($deco, 8, "0", STR_PAD_LEFT));
+            $datos['dato'.$k] = str_pad($deco, 16, "0", STR_PAD_LEFT);//no funcional
+            array_push($identificacionres, str_pad($deco, 16, "0", STR_PAD_LEFT));
         }
         foreach ($flagarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
-            $datos['dato'.$k] = str_pad($deco, 8, "0", STR_PAD_LEFT);//no funcional
-            array_push($flagres, str_pad($deco, 8, "0", STR_PAD_LEFT));
+            $datos['dato'.$k] = str_pad($deco, 3, "0", STR_PAD_LEFT);//no funcional
+            array_push($flagres, str_pad($deco, 3, "0", STR_PAD_LEFT));
         }
         foreach ($offsetarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
-            $datos['dato'.$k] = str_pad($deco, 8, "0", STR_PAD_LEFT);//no funcional
-            array_push($offsetres, str_pad($deco, 8, "0", STR_PAD_LEFT));
+            $datos['dato'.$k] = str_pad($deco, 13, "0", STR_PAD_LEFT);//no funcional
+            array_push($offsetres, str_pad($deco, 13, "0", STR_PAD_LEFT));
         }
         foreach ($ttlarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
@@ -155,8 +155,8 @@ class Redes extends CI_Controller {
         }
         foreach ($checksumarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
-            $datos['dato'.$k] = str_pad($deco, 8, "0", STR_PAD_LEFT);//no funcional
-            array_push($checksumres, str_pad($deco, 8, "0", STR_PAD_LEFT));
+            $datos['dato'.$k] = str_pad($deco, 16, "0", STR_PAD_LEFT);//no funcional
+            array_push($checksumres, str_pad($deco, 16, "0", STR_PAD_LEFT));
         }
 
         foreach ($arrayip1 as $k => $value) {

@@ -47,9 +47,20 @@ ob_end_flush();*/
                     <input placeholder="ingrese texto" id="" name="" type="hidden" class="validate" >
                 </div>
                 <div class="input-field col s3">
-                    <input placeholder="ingrese números" id="tipoServicio" name="tipoServicio" type="text" class="validate" >
-                    <label for="first_name">Tipo de servico</label>
-                </div>
+                    
+                     <select id="tipoServicio" name="tipoServicio">
+      <option value=""   disabled selected>Seleccione TOS</option>
+      <option value="0"> Routine </option>
+      <option value="1"> Priority</option>
+      <option value="2"> Immediate</option>
+	  <option value="3"> Flash</option>
+	  <option value="4"> Flash Override</option>
+	  <option value="5"> Critical</option>
+	  <option value="6"> Internetwork Control</option>
+	  <option value="7"> Network Control</option>
+	  </select>          
+					<label for="first_name">Tipo de servico(TOS)</label>
+                </div>   
                 <div class="input-field col s3">
                     <input placeholder="ingrese números" id="longitudT" name="longitudT" type="text" class="validate" >
                     <label for="first_name">Logintud Total</label>
@@ -76,11 +87,55 @@ ob_end_flush();*/
             <!-- tercera fila  -->
             <div class="row">
                 <div class="input-field col s3">
-                    <input placeholder="ingrese version" id="ttl" name="ttl" type="text" class="validate" >
+				<input placeholder="ingrese version" id="ttl" name="ttl" type="text" class="validate" >
+					   
                     <label for="first_name">TTL</label>
                 </div>
                 <div class="input-field col s3">
-                    <input placeholder="ingrese texto" id="protocolo" name="protocolo" type="text" class="validate" >
+				
+     <select id="protocolo" name="protocolo">
+      <option value=""   disabled selected>Seleccione Opción</option>
+      <option value="1"> ICMP (Internet Control Message Protocol)</option>
+      <option value="2"> IGMP (Internet Group Management Protocol)</option>
+      <option value="3"> GGP (Gateway-to-Gateway)</option>
+	  <option value="4"> IP (IP in IP (encapsulation))</option>
+	  <option value="5"> T (Stream)</option>
+	  <option value="6"> CP (Transmission Control Protocol)</option>
+      <option value="7"> BT (Core Based Trees)</option>
+      <option value="8"> GP (Exterior Gateway Protocol)</option>
+	  <option value="9"> GP (Interior Gateway Protocol)</option>
+	  <option value="10">BBN-RCC-MON (BBN RCC Monitoring)</option>
+	  <option value="17">UDP (User Datagram Protocol)</option>
+      <option value="18">MUX (Multiplexing Protocool)</option>
+      <option value="27">RDP (Reliable Data Protocol)</option>
+	  <option value="28">IRTP (Internet Reliable Transaction Protocol)</option>
+	  <option value="45">IDRP (Inter-Domain Routing Protocol)</option>
+	  <option value="46">RSVP (Reservation Protocol)</option>
+      <option value="47">GRE (Generic Routing Encapsulation)</option>
+      <option value="48">MHRP (Mobile Host Routing Protocol)</option>
+	  <option value="50">ESP (Encapsulating Security Payload)</option>
+	  <option value="51">AH (Authentication Header)</option>
+	  <option value="54">NARP (NBMA Address Resolution Protocol)</option>
+      <option value="55">MOBILE (IP Mobility)</option>
+      <option value="88">EIGRP (Enhanced Interior Gateway Routing Protocol)</option>
+	  <option value="89">OSPF (Open Shortest Path First)</option>
+	  <option value="94">IPIP (IP-within-IP Encapsulation Protocol)</option>
+	  <option value="95">MICP (Mobile Internetworking Control Protocol)</option>
+      <option value="97">ETHERIP (Ethernet-within-IP Encapsulation)</option>
+      <option value="98">ENCAP (Encapsulation Header)</option>
+	  <option value="103"> PIM (Protocol Independent Multicast)</option>
+	  <option value="112"> VRRP (Virtual Router Redundancy Protocol)</option>
+	  <option value="113"> PGM (PGM Reliable Transport Protocol)</option>
+      <option value="115"> L2TP (Layer Two Tunneling Protocol)</option>
+      <option value="118"> STP (Schedule Transfer Protocol)</option>
+	  <option value="121"> SMP (Simple Message Protocol)</option>
+	  <option value="131"> PIPE (Private IP Encapsulation within IP)</option>
+	  <option value="132"> SCTP (Stream Control Transmission Protocol)</option>
+      <option value="133"> FC (Fibre Channel)</option>
+	  <option value="137"> MPLS-in-IP (Multiprotocol Label Switching in IP)</option>
+      <option value="139"> HIP (Host Identity Protocol)</option>
+    </select> 
+                   
                     <label for="first_name">Protocolo</label>
                     <input placeholder="ingrese texto" id="" name="" type="hidden" class="validate" >
                 </div>
@@ -101,9 +156,9 @@ ob_end_flush();*/
              <div class="row">
                
                 <div class="input-field col s12">
-                    <input placeholder="ingrese mensaje" id="msj" name="msj" type="text" class="validate" onclick="">
+                    <input placeholder="ingrese mensaje" id="msj" name="msj" type="text" class="validate">
                     <label for="first_name">Mensaje</label>
-                    <input placeholder="ingrese mensaje" id="msj2" name="msj2" type="hidden" class="validate" >
+                    <input id="msj2" name="msj2" type="hidden">
                 </div>
                 
             </div>

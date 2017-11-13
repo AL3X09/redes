@@ -143,7 +143,7 @@
        
             foreach ($ip1res as $k11 => $value) {
                 //echo $dato."0";
-                echo '<div class="col s12 m12 l12">';
+                echo '<div class="col s12 m3 l3">';
                 //echo '<input id="ip" type="text" value="'.$value.'">';
                 echo '<div class="card-panel teal lighten-'.$k11.'">Ip Envio:</br>'.$value.'</div>';
                 echo '</div>';
@@ -159,7 +159,7 @@
        
             foreach ($msjres as $k12 => $value) {
                 //echo $dato."0";
-                echo '<div class="col s12 m12 l12">';
+                echo '<div class="col s12 m3 l3">';
                 //echo '<input id="ip" type="text" value="'.$value.'">';
                 echo '<div class="card-panel red darken-'.$k12.'">Mensaje:</br>'.$value.'</div>';
                 echo '</div>';
@@ -175,7 +175,7 @@
        
             foreach ($ip2res as $k13 => $value) {
                 //echo $dato."0";
-                echo '<div class="col s12 m12 l12">';
+                echo '<div class="col s12 m3 l3">';
                 //echo '<input id="ip" type="text" value="'.$value.'">';
                 echo '<div class="card-panel purple darken-'.$k13.'">Ip Recive:</br>'.$value.'</div>';
                 echo '</div>';
