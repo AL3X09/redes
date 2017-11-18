@@ -59,6 +59,11 @@ ob_end_flush();
                 <a class="btn-floating btn-large waves-effect waves-light blue tooltipped" data-position="bottom" data-delay="50" data-tooltip="Ver Tus Mensajes" onclick="viewMensaje()"><i class="material-icons">announcement</i></a>
             </div>
         </div>
+        <div class="col l3 s12">
+            <div id="divBotoncrear">  
+                <a class="btn-floating btn-large waves-effect waves-light blue" onclick="viewMensaje()"><i class="material-icons">announcement</i></a>
+            </div>
+        </div>
     </div>
 </div>
 
