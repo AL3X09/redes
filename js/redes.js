@@ -40,12 +40,22 @@ function volver1() {
 
 //para llamar vista
 function viewcodificarIP() {
-    location.href=baseUrl+'Redes/viewcodificarIp';
+    location.href=baseUrl+'RedesContro/viewcodificarIp';
 }
 
 //para llamar vista
 function viewDatagrama() {
-    location.href=baseUrl+'Redes/viewDatagrama';
+    location.href=baseUrl+'RedesContro/viewDatagrama';
+}
+
+//para llamar vista
+function viewDatagramaMensaje() {
+    location.href=baseUrl+'RedesContro/viewMensaje';
+}
+
+//para llamar vista
+function viewMensaje() {
+    location.href=baseUrl+'MensajeController/viewMensajeCodificado';
 }
 
 function enviar() {

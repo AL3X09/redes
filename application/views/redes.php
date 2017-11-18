@@ -41,12 +41,22 @@ ob_end_flush();
         
         <div class="col l3 s12">
             <div id="divBotoncrear">  
-                <a class="btn-floating btn-large waves-effect waves-light blue" onclick="viewcodificarIP()"><i class="material-icons">router</i></a>
+                <a class="btn-floating btn-large waves-effect waves-light blue tooltipped" data-position="bottom" data-delay="50" data-tooltip="Envio IP" onclick="viewcodificarIP()"><i class="material-icons">router</i></a>
             </div>
         </div>
         <div class="col l3 s12">
             <div id="divBotoncrear">  
-                <a class="btn-floating btn-large waves-effect waves-light blue" onclick="viewDatagrama()"><i class="material-icons">dashboard</i></a>
+                <a class="btn-floating btn-large waves-effect waves-light blue tooltipped" data-position="bottom" data-delay="50" data-tooltip="Datagrama" onclick="viewDatagrama()"><i class="material-icons">dashboard</i></a>
+            </div>
+        </div>
+        <div class="col l3 s12">
+            <div id="divBotoncrear">  
+                <a class="btn-floating btn-large waves-effect waves-light blue tooltipped" data-position="bottom" data-delay="50" data-tooltip="Enviar Mensaje" onclick="viewDatagramaMensaje()"><i class="material-icons">rate_review</i></a>
+            </div>
+        </div>
+         <div class="col l3 s12">
+            <div id="divBotoncrear">  
+                <a class="btn-floating btn-large waves-effect waves-light blue tooltipped" data-position="bottom" data-delay="50" data-tooltip="Ver Tus Mensajes" onclick="viewMensaje()"><i class="material-icons">announcement</i></a>
             </div>
         </div>
     </div>

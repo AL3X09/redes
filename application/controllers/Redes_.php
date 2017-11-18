@@ -25,6 +25,11 @@ class Redes extends CI_Controller {
     {
         $this->load->view('viewdatagrama');
     }
+    //llamo vista de formulirio para el mensaje
+    public function viewMensaje()
+    {
+        $this->load->view('viewdatamensaje');
+    }
 	//llamo vista de formulirio para perfiles
     public function leerMensaje()
     {

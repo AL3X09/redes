@@ -7,19 +7,24 @@ var img=baseUrl+'img/x.png';
 var re = /\s*,\s*/;
 var checksum=0;
 var letrass=[];
+
 $(document).ready(function() {
+
     var num = 10;
     var res = String.fromCharCode(65);
     var letras=[];
- $('select').material_select();
+ //$('select').material_select();
 if (typeof(codificado) === "undefined") {
     console.log("codificado no está definido.");
 }else{
     //codificar();// jlaristizabal
     enviarDatos();
 }
-//alert( num.toString(2) ); // "1111101"
-//alert( String.fromCharCode(65) ); // "1111101"
+//llamo una funcion y cargo los uisarios de la tabla
+callUsuarios();
+
+//llamo funcion inicializar select
+initSelect()
 
 var cadenaAnalizar = 'Al ex C'; // 
  for (var i = 0; i< cadenaAnalizar.length; i++) {
@@ -229,7 +234,10 @@ var cadenaAnalizar = 'Al ex C'; //
         
       });
 
-
+       //escucho el cambio al seleccionar el usaurio a enviar msj
+      $('#destinario').change(function() {
+        codificar2();// Alex
+      });
 
 })
 
@@ -318,7 +326,35 @@ function codificar2() {
        }
        console.log(letrass);
        $("#msj2").val(letrass);
+
+       $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
+        console.log(data);
+        $("#ip1").val(data.ip);
+        });
       
    
 }
 
+ function callUsuarios() {
+
+    $.ajax({
+        url: baseUrl + 'Usuarios/listarUsuarios',
+        method: 'GET',
+        success: function (data) {
+            var option = $('<option></option>').attr("value", "").text("Seleccione...");
+            $.each(data, function (k, v) {
+                option = $('<option></option>').attr("value", v.idusuaro).text(v.nombre1 +' '+v.nombre2+' '+v.apellido1+' '+v.apellido2);
+                $("#destinario").append(option);
+
+            });
+            $("#destinario").material_select();
+        }
+        
+    });
+}
+
+function initSelect() {
+    $('#tipoServicio').material_select();
+    $('#protocolo').material_select();
+    $('#destinario').material_select();
+  }
