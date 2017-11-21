@@ -100,7 +100,7 @@ class DatagramaModel extends CI_MODEL {
         }
     }
 
-    function insertar($nombre1, $nombre2, $apellido1, $apellido2, $identificacion, $celular, $usuario, $contrasenia, $rol) {
+    function insertar2($nombre1, $nombre2, $apellido1, $apellido2, $identificacion, $celular, $usuario, $contrasenia, $rol) {
         $mensaje = array();
 
         try {
@@ -128,6 +128,38 @@ class DatagramaModel extends CI_MODEL {
             $mensaje = array('msg' => $ex->getMessage(), 'tipo' => 'error');
         }
         return $mensaje;
+    }
+
+    function insertar($datores,$datosOriginal) {
+        //print_r($datores);
+        $this->db->insert('datagrama',$datores);
+        /*$mensaje = array();
+
+        try {
+            $consec = $this->consec_usuario();
+            //$consec+=1;
+            $stmt = $this->db->conn_id->prepare("INSERT INTO datagrama VALUES (NULL,?,?,?,?,?,?,?,?,?,1)");
+            $stmt->bind_param("issssiiss", $consec, $nombre1, $nombre2, $apellido1, $apellido2, $identificacion, $celular, $usuario, $contrasenia);
+            $ins = $stmt->execute();
+            $ultid = $stmt->insert_id;
+            $stmt->close();
+            //insert en tabla de relacion
+            $stmt = $this->db->conn_id->prepare("INSERT INTO usuario_has_roles VALUES (?,?)");
+            $stmt->bind_param("ii", $ultid, $rol);
+            $ins = $stmt->execute();
+            $stmt->close();
+            if ($ins) {
+                $mensaje = array('msg' => 'Se guardaron correctamente', 'tipo' => 'success');
+            } else {
+                $mensaje = array('msg' => 'Error al guarda', 'tipo' => 'error');
+            }
+            if ($this->db->conn_id->error) {
+                throw new Exception("MySQL error <br>" . $this->db->conn_id->error, $this->db->conn_id->errno);
+            }
+        } catch (Exception $ex) {
+            $mensaje = array('msg' => $ex->getMessage(), 'tipo' => 'error');
+        }
+        return $mensaje;*/
     }
 
 }

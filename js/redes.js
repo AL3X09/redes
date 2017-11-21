@@ -49,7 +49,6 @@ function viewDatagrama() {
 }
 
 //para llamar vista
-<<<<<<< HEAD
 function viewDatagramaMensaje() {
     location.href=baseUrl+'RedesContro/viewMensaje';
 }
@@ -57,10 +56,6 @@ function viewDatagramaMensaje() {
 //para llamar vista
 function viewMensaje() {
     location.href=baseUrl+'MensajeController/viewMensajeCodificado';
-=======
-function viewMensaje() {
-    location.href=baseUrl+'RedesContro/viewMensaje';
->>>>>>> origin/master
 }
 
 function enviar() {

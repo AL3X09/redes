@@ -57,55 +57,65 @@ class MensajeController extends CI_Controller {
             $deco = base_convert($value, 10, 2);
             $datos['dato'.$k] = str_pad($deco, 4, "0", STR_PAD_LEFT);//no funcional
             array_push($versionres, str_pad($deco, 4, "0", STR_PAD_LEFT));
+            $versionres1=str_pad($deco, 4, "0", STR_PAD_LEFT);
         }
 
         foreach ($cabeceraarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
             $datos['dato'.$k] = str_pad($deco, 4, "0", STR_PAD_LEFT);//no funcional
             array_push($cabecerares, str_pad($deco, 4, "0", STR_PAD_LEFT));
+            $cabecerares1=str_pad($deco, 4, "0", STR_PAD_LEFT);
         }
 
         foreach ($tipoServicioarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
             $datos['dato'.$k] = str_pad($deco, 8, "0", STR_PAD_LEFT);//no funcional
             array_push($tipoServiciores, str_pad($deco, 8, "0", STR_PAD_LEFT));
+            $tipoServiciores1= str_pad($deco, 8, "0", STR_PAD_LEFT);
         }
 
         foreach ($longitudTarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
             $datos['dato'.$k] = str_pad($deco, 16, "0", STR_PAD_LEFT);//no funcional
             array_push($longitudTres, str_pad($deco, 16, "0", STR_PAD_LEFT));
+            $longitudTres1= str_pad($deco, 16, "0", STR_PAD_LEFT);
         }
 
         foreach ($identificacionarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
             $datos['dato'.$k] = str_pad($deco, 16, "0", STR_PAD_LEFT);//no funcional
             array_push($identificacionres, str_pad($deco, 16, "0", STR_PAD_LEFT));
+            $identificacionres1= str_pad($deco, 16, "0", STR_PAD_LEFT);
         }
         foreach ($flagarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
             $datos['dato'.$k] = str_pad($deco, 3, "0", STR_PAD_LEFT);//no funcional
             array_push($flagres, str_pad($deco, 3, "0", STR_PAD_LEFT));
+            $flagres1= str_pad($deco, 3, "0", STR_PAD_LEFT);
         }
         foreach ($offsetarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
             $datos['dato'.$k] = str_pad($deco, 13, "0", STR_PAD_LEFT);//no funcional
             array_push($offsetres, str_pad($deco, 13, "0", STR_PAD_LEFT));
+            $offsetres1= str_pad($deco, 13, "0", STR_PAD_LEFT);
         }
         foreach ($ttlarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
             $datos['dato'.$k] = str_pad($deco, 8, "0", STR_PAD_LEFT);//no funcional
             array_push($ttlres, str_pad($deco, 8, "0", STR_PAD_LEFT));
+            $ttlres1= str_pad($deco, 8, "0", STR_PAD_LEFT);
         }
         foreach ($protocoloarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
             $datos['dato'.$k] = str_pad($deco, 8, "0", STR_PAD_LEFT);//no funcional
             array_push($protocolores, str_pad($deco, 8, "0", STR_PAD_LEFT));
+            $protocolores1= str_pad($deco, 8, "0", STR_PAD_LEFT);
         }
         foreach ($checksumarray as $k => $value) {
             $deco = base_convert($value, 10, 2);
             $datos['dato'.$k] = str_pad($deco, 16, "0", STR_PAD_LEFT);//no funcional
             array_push($checksumres, str_pad($deco, 16, "0", STR_PAD_LEFT));
+            $checksumres1= str_pad($deco, 16, "0", STR_PAD_LEFT);
         }
 
         foreach ($arrayip1 as $k => $value) {
@@ -113,6 +123,7 @@ class MensajeController extends CI_Controller {
             $deco = base_convert($value, 10, 2);
             $datos['dato'.$k] = str_pad($deco, 8, "0", STR_PAD_LEFT);//no funcional
             array_push($ip1res, str_pad($deco, 8, "0", STR_PAD_LEFT));
+            $ip1res1= str_pad($deco, 8, "0", STR_PAD_LEFT);
             
         }
         foreach ($arraymsj as $k2 => $value) {
@@ -122,27 +133,29 @@ class MensajeController extends CI_Controller {
             //print_r($deco);
             //$datos['msj'.$k2] = str_pad($deco, 8, "0", STR_PAD_LEFT);// no funcional
             array_push($msjres, str_pad($deco, 8, "0", STR_PAD_LEFT));
+            $msjres1= str_pad($deco, 8, "0", STR_PAD_LEFT);
         }
         foreach ($arrayip2 as $k3 => $value) {
             //echo "string".$value;
             $deco = base_convert($value, 10, 2);
             $datos['ip2'.$k3] = str_pad($deco, 8, "0", STR_PAD_LEFT);// no funcional
             array_push($ip2res, str_pad($deco, 8, "0", STR_PAD_LEFT));
+            $usuario= str_pad($deco, 8, "0", STR_PAD_LEFT);
         }
 
-         $datos['versionres']=  $versionres ;
-         $datos['cabecerares']=  $cabecerares ;
-         $datos['tipoServiciores']=  $tipoServiciores ;
-         $datos['longitudTres']=  $longitudTres ;
-         $datos['identificacionres']=  $identificacionres ;
-         $datos['flagres']=  $flagres ;
-         $datos['offsetres']=  $offsetres ;
-         $datos['ttlres']=  $ttlres ;
-         $datos['protocolores']=  $protocolores ;
-         $datos['checksumres']=  $checksumres ;
-         $datos['ip1res']=$ip1res;
-         $datos['msjres']=$msjres;
-         $datos['destinario']=$ip2res;
+         $datores['version']=  $versionres1 ;
+         $datores['cabecera']=  $cabecerares1 ;
+         $datores['tipo_servicio']=  $tipoServiciores1;
+         $datores['longitud']=  $longitudTres1 ;
+         $datores['identificacion']=  $identificacionres1 ;
+         $datores['flag']=  $flagres1 ;
+         $datores['offset']=  $offsetres1 ;
+         $datores['ttl']=  $ttlres1 ;
+         $datores['protocolo']=  $protocolores1 ;
+         $datores['checksum']=  $checksumres1 ;
+         $datores['ip_envio ']=$ip1res1;
+         $datores['mensaje']=$msjres1;
+         $datores['usuario']=$usuario;
 
         //inserto en otro array valore sin codificar
          $datosOriginal['versionres']=  $_POST['version'] ;
@@ -157,12 +170,13 @@ class MensajeController extends CI_Controller {
          $datosOriginal['checksumres']=  $_POST['checksum'] ;
          $datosOriginal['ip1res']=$_POST['ip1'];
          $datosOriginal['msj']=$_POST['msj'];
-         $datosOriginal['ip2res']=$_POST['ip2'];
+         $datosOriginal['destinario']=$_POST['destinario'];
         
-        print_r($datosOriginal);
+        //print_r($datosOriginal);
         //envio al modelo los datos para la diferente insercion
-        //$lista = $this->PermisosModel->listar($datos,$datosOriginal);
-        $this->load->view('viewdatagramacodificado');
+        $lista = $this->DatagramaModel->insertar($datores,$datosOriginal);
+        
+        $this->load->view('viewdatamensaje');
     }
    
     //
