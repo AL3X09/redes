@@ -13,13 +13,7 @@ $(document).ready(function() {
     var num = 10;
     var res = String.fromCharCode(65);
     var letras=[];
- //$('select').material_select();
-if (typeof(codificado) === "undefined") {
-    console.log("codificado no está definido.");
-}else{
-    //codificar();// jlaristizabal
-    enviarDatos();
-}
+
 //llamo una funcion y cargo los uisarios de la tabla
 callUsuarios();
 
@@ -326,9 +320,10 @@ function codificar2() {
        }
        console.log(letrass);
        $("#msj2").val(letrass);
-
-       $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
-        console.log(data);
+       //http://freegeoip.net/json/
+       $.getJSON('http://ipinfo.io', function(data) {
+        //$.getJSON('http://freegeoip.net/json/', function(data) {
+        //console.log(data);
         $("#ip1").val(data.ip);
         });
       
@@ -343,7 +338,9 @@ function codificar2() {
         success: function (data) {
             var option = $('<option></option>').attr("value", "").text("Seleccione...");
             $.each(data, function (k, v) {
-                option = $('<option></option>').attr("value", v.idusuaro).text(v.nombre1 +' '+v.nombre2+' '+v.apellido1+' '+v.apellido2);
+                ///console.log(v);
+                option = $("<option></option>").val(v.idusuario).html(v.nombre1 +' '+v.nombre2+' '+v.apellido1+' '+v.apellido2);
+                //option = $('<option></option>').attr("value", v.idusuario).text(v.nombre1 +' '+v.nombre2+' '+v.apellido1+' '+v.apellido2);
                 $("#destinario").append(option);
 
             });

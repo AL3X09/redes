@@ -59,8 +59,8 @@ ob_end_flush();
   </nav>
 
  <div class="row">
-<a class="waves-effect waves-light btn tingle_addon">Ver Codificado</a>
-<a class="waves-effect waves-light btn tingle_addon_2 ">Ver Original</a>
+<a class="waves-effect waves-light btn tingle_addon">Ver Original</a>
+<a class="waves-effect waves-light btn tingle_addon_2 ">Ver Codificado</a>
 </div>
     </div>
     <!--FIN DIV CONT MENSAJE-->
@@ -199,7 +199,6 @@ ob_end_flush();
                
               <div class="input-field col s12">
                 <select id="destinario" name="destinario" >
-                <option value="" disabled selected>Seleccione...</option>
                 </select>          
                 <label for="first_name">Usuario Destino</label>
               </div>

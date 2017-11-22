@@ -10,15 +10,16 @@
 
 <body class="" >
 <?php
-/*if (!isset($_SESSION["usuario"])) {
+if (!isset($_SESSION["usuario"])) {
     //echo "error1";
-    header("location: ". base_url()."Administracion/cerrarSesion");
+    session_start();
+//header("location: ". base_url()."Administracion/cerrarSesion");
 }
 $aspirante = unserialize($_SESSION['usuario']);
+
 echo '<input type="hidden" value="'.$aspirante->idusuario.'" id="idusuario"/>';
 
-
-ob_end_flush();*/
+ob_end_flush();
 ?>
 <nav class="blue darken-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo" onclick="volver()"><img src="<?php echo base_url(); ?>img/logo.svg" width="100" height="80"></a>
